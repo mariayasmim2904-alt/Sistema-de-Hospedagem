@@ -1,21 +1,156 @@
-# DIO - Trilha .NET - Explorando a linguagem C#
-www.dio.me
+# 🏨 Sistema de Hospedagem
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de explorando a linguagem C#, da trilha .NET da DIO.
+Projeto desenvolvido durante a **Trilha .NET — Explorando a Linguagem C#**, da [DIO](https://www.dio.me/).
 
-## Contexto
-Você foi contratado para construir um sistema de hospedagem, que será usado para realizar uma reserva em um hotel. Você precisará usar a classe Pessoa, que representa o hóspede, a classe Suíte, e a classe Reserva, que fará um relacionamento entre ambos.
+O projeto consiste em um sistema de hospedagem desenvolvido em **C#**, utilizando conceitos fundamentais da linguagem e de Programação Orientada a Objetos (POO).
 
-O seu programa deverá cálcular corretamente os valores dos métodos da classe Reserva, que precisará trazer a quantidade de hóspedes e o valor da diária, concedendo um desconto de 10% para caso a reserva seja para um período maior que 10 dias.
+## 📋 Sobre o projeto
 
-## Regras e validações
-1. Não deve ser possível realizar uma reserva de uma suíte com capacidade menor do que a quantidade de hóspedes. Exemplo: Se é uma suíte capaz de hospedar 2 pessoas, então ao passar 3 hóspedes deverá retornar uma exception.
-2. O método ObterQuantidadeHospedes da classe Reserva deverá retornar a quantidade total de hóspedes, enquanto que o método CalcularValorDiaria deverá retornar o valor da diária (Dias reservados x valor da diária).
-3. Caso seja feita uma reserva igual ou maior que 10 dias, deverá ser concedido um desconto de 10% no valor da diária.
+O sistema permite realizar reservas em um hotel, relacionando:
 
+* **Pessoa** — representa os hóspedes;
+* **Suíte** — representa a acomodação disponível;
+* **Reserva** — relaciona os hóspedes e a suíte, além de realizar os cálculos da hospedagem.
 
-![Diagrama de classe estacionamento](diagrama_classe_hotel.png)
+O projeto foi desenvolvido a partir de uma estrutura inicial disponibilizada no desafio, sendo implementadas as regras e validações solicitadas.
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+## ⚙️ Funcionalidades
+
+O sistema possui as seguintes funcionalidades:
+
+* Cadastro de hóspedes em uma reserva;
+* Cadastro da suíte;
+* Consulta da quantidade de hóspedes;
+* Cálculo do valor total da hospedagem;
+* Aplicação automática de **10% de desconto para reservas de 10 dias ou mais**;
+* Validação da capacidade da suíte;
+* Exceção quando a quantidade de hóspedes ultrapassa a capacidade da suíte.
+
+## 📌 Regras implementadas
+
+### 1. Validação da capacidade da suíte
+
+Não é possível cadastrar uma quantidade de hóspedes superior à capacidade da suíte.
+
+Exemplo:
+
+```text
+Capacidade da suíte: 2 pessoas
+Hóspedes: 3 pessoas
+
+Resultado: Exception
+```
+
+### 2. Quantidade de hóspedes
+
+O método `ObterQuantidadeHospedes()` retorna a quantidade total de hóspedes cadastrados na reserva.
+
+### 3. Cálculo da hospedagem
+
+O valor é calculado utilizando:
+
+```text
+Dias reservados × Valor da diária
+```
+
+### 4. Desconto
+
+Para reservas de **10 dias ou mais**, é aplicado um desconto de **10%** sobre o valor total da hospedagem.
+
+Exemplo:
+
+```text
+10 dias × R$ 100,00 = R$ 1.000,00
+
+Desconto de 10% = R$ 100,00
+
+Valor final = R$ 900,00
+```
+
+## 🛠️ Tecnologias utilizadas
+
+* C#
+* .NET
+* Programação Orientada a Objetos
+* Git
+* GitHub
+
+## 📂 Estrutura do projeto
+
+```text
+Sistema-de-Hospedagem/
+│
+├── Models/
+│   ├── Pessoa.cs
+│   ├── Reserva.cs
+│   └── Suite.cs
+│
+├── Program.cs
+├── diagrama_classe_hotel.png
+└── README.md
+```
+
+## ▶️ Como executar
+
+### Pré-requisitos
+
+É necessário ter o **.NET SDK** instalado.
+
+Verifique a instalação com:
+
+```bash
+dotnet --version
+```
+
+### Executando o projeto
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/mariayasmim2904-alt/Sistema-de-Hospedagem.git
+```
+
+Entre na pasta:
+
+```bash
+cd trilha-net-explorando-desafio
+```
+
+Execute o projeto:
+
+```bash
+dotnet run
+```
+
+Para verificar se o projeto compila corretamente:
+
+```bash
+dotnet build
+```
+
+## 📚 Aprendizados
+
+Durante o desenvolvimento deste projeto, foram praticados conceitos importantes de C#, como:
+
+* Classes e objetos;
+* Propriedades;
+* Métodos;
+* Construtores;
+* Listas;
+* Estruturas condicionais;
+* Exceções;
+* Encapsulamento;
+* Relacionamento entre classes;
+* Programação Orientada a Objetos.
+
+## 🎯 Objetivo
+
+Este projeto faz parte da minha jornada de estudos em **C# e .NET**, com o objetivo de praticar os fundamentos da linguagem e desenvolver projetos para compor meu portfólio.
+
+---
+
+### 📖 Referência
+
+Desafio proposto pela **DIO — Digital Innovation One**, na Trilha .NET — Explorando a Linguagem C#.
+
+🌐 [DIO](https://www.dio.me/)
